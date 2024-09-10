@@ -16,9 +16,9 @@ public class Prato
 
     [Required(ErrorMessage = "Informe a descricao")]
     [StringLength(100, ErrorMessage = "A descricao deve informar o prato em si")]
-    public string descricao { get; set; }
+    public string Descricao { get; set; }
 
-    public int categoria_id { get; set; }
+    public int Categoria_id { get; set; }
 
-    public Categoria categoria { get; set; }
+    public Categoria Categoria { get; set; }
 }

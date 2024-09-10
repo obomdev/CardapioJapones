@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using CardapioJapones.Models;
 using CardapioJapones.Data;
 using CardapioJapones.ViewModels;
+using Microsoft.EntityFrameworkCore;
 
 namespace CardapioJapones.Controllers;
 
@@ -20,17 +21,29 @@ public class HomeController : Controller
     {
         HomeVM home = new()
         {
+            Categorias = _context.Categorias.ToList(),
+            Pratos = _context.Pratos
+                .Include(p => p.Categoria)
+                .ToList()
 
         };
+        return View(home);
         
-        
-        
-        return View();
+    
     }
 
-    public IActionResult Privacy()
+    [HttpGet]
+    public IActionResult Details()
     {
-        return View();
+        Prato prato = _context.Pratos
+            .Include(p => p.Categoria)
+            .SingleOrDefault();
+        DetailsVM details = new()
+        {
+            Atual = prato,
+        };
+
+        return View(prato);
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
