@@ -18,6 +18,9 @@ public class Prato
     [StringLength(100, ErrorMessage = "A descricao deve informar o prato em si")]
     public string Descricao { get; set; }
 
+    [StringLength(300)]
+    public string Imagem { get; set; }
+
     public int Categoria_id { get; set; }
 
     public Categoria Categoria { get; set; }

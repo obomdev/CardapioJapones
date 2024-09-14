@@ -1,5 +1,3 @@
-
-
 using CardapioJapones.Data;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Options;
