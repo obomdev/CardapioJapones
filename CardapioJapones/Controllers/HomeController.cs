@@ -33,17 +33,28 @@ public class HomeController : Controller
     }
 
     [HttpGet]
-    public IActionResult Details()
+     public IActionResult Details(int id)
     {
         Prato prato = _context.Pratos
-            .Include(p => p.Categoria)
-            .SingleOrDefault();
+        .Where(p => p.Id == id)
+        .Include(p => p.Categoria)
+        .SingleOrDefault();
         DetailsVM details = new()
         {
             Atual = prato,
+            Anterior = _context.Pratos
+                .OrderByDescending(p => p.Id)
+                .FirstOrDefault(p => p.Id < id),
+            Proximo = _context.Pratos
+                .OrderBy(p => p.Id)
+                .FirstOrDefault(p => p.Id > id)
         };
+        return View(details);
+    }
 
-        return View(prato);
+    public IActionResult Privacy()
+    {
+        return View();
     }
 
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]

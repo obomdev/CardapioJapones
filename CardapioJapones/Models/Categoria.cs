@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CardapioJapones.Models;
 
+[Table("Categoria")]
 public class Categoria
 {
     [Key]

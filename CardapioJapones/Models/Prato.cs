@@ -3,6 +3,7 @@ using System.ComponentModel.DataAnnotations.Schema;
 
 namespace CardapioJapones.Models;
 
+[Table("Prato")]
 public class Prato
 {
 
@@ -22,6 +23,7 @@ public class Prato
     public string Imagem { get; set; }
 
     public int Categoria_id { get; set; }
-
+    
+    [ForeignKey("Categoria_id")]
     public Categoria Categoria { get; set; }
 }
