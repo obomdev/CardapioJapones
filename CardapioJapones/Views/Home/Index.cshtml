@@ -15,7 +15,7 @@
                 @foreach (var categoria in Model.Categorias)
                 {
                     <button id="btn-@categoria.Nome" class="btn btn-sm my-2 text-white btn-filter"
-                        style="background-color:" onclick="filter('@categoria.Nome')">@categoria.Nome</button>
+                        style="background-color: red" onclick="filter('@categoria.Nome')">@categoria.Nome</button>
                 }
             </div>
         </div>
@@ -31,7 +31,7 @@
                     <div class="card">
                         <img src="@prato.Imagem" class="card-img-top" alt="@prato.Nome" />
                         <div class="card-body">
-                            <h5 class="card-text mb-1 text-white">Nº @prato.Id.ToString("000")</h5>
+                            <h5 class="card-text mb-1 text-black">Nº @prato.Id.ToString("000")</h5>
                             <h3 class="card-title text-dark">@prato.Nome</h3>
                             <div class="d-flex justify-content-between align-items-center">
                             </div>

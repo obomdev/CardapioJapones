@@ -19,27 +19,35 @@ html {
 
 body {
   margin-bottom: 60px;
+  background-color: #554f12;
 }
 
 .colpok{
    /*background-color: rgba(255, 255, 255, 0.1);*/
-   border: 1px solid rgba(255, 255, 255, 0.2);
+   border: 1px solid rgba(20, 10, 10, 0.623);
    border-radius: 8px;
    /*transition: transform 0.3s, box-shadow 0.3s;*/
    text-align: center;
    padding: 10px;
+   background-color: black;
+}
+
+.colpok:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);
 }
 
 .colpok img {
   border-top-left-radius: 8px;
   border-top-right-radius: 8px;
-  width: 250px;
+  width: 305px;
   height: 250px;
   object-fit: cover;
-  padding-left: 5px;
+  padding-left: 10px;
   text-align: center;
 }
 
 .colpok .card-body {
   text-align: center;
+  background-color:#FFEFD5;
 }
